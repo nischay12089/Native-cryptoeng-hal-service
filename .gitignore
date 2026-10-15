@@ -1,0 +1,4 @@
+out/
+*.zip
+# device data: never commit a PMS store or seed
+pms_store*

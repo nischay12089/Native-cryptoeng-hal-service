@@ -1,0 +1,14 @@
+# Software PMS: preserve existing enrollment and migrate ownership from old root tests.
+on post-fs-data
+    mkdir /data/vendor/cryptoeng 0700 system system
+    chown system system /data/vendor/cryptoeng/pms_store
+    chmod 0600 /data/vendor/cryptoeng/pms_store
+    chown system system /data/vendor/cryptoeng/pms_store.seed
+    chmod 0600 /data/vendor/cryptoeng/pms_store.seed
+    restorecon_recursive /data/vendor/cryptoeng
+
+service hal_cryptoeng_oplus /odm/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
+    interface aidl vendor.oplus.hardware.cryptoeng.ICryptoeng/default
+    class hal
+    user system
+    group system

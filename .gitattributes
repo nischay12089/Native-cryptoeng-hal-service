@@ -1,0 +1,2 @@
+# Device files (init .rc, CIL, contexts) must stay LF on every checkout.
+* text=auto eol=lf
