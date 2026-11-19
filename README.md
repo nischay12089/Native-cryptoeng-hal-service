@@ -4,16 +4,15 @@ A from-scratch, TEE-free implementation of the OnePlus
 `vendor.oplus.hardware.cryptoeng.ICryptoeng` AIDL HAL for an OxygenOS port on
 Xiaomi onyx (Poco F7, SM8735). The stock OnePlus 13 service needs QSEECom and a
 OnePlus-signed TrustZone app that cannot load on Xiaomi firmware. This service
-uses the same interface identity (AIDL V1, frozen hash
-`765136eb397eb5b85ee1e089d8fec72c15e266b3`, service name and init service), so
-OxygenOS clients bind to it unchanged.
+uses the same interface identity (AIDL V1 )
+
 
 What it answers:
 
 - **Device state** commands that OxygenOS asks about at boot.
 - **Privacy password (PMS 4001-4005):** AppLock, Hide apps and Private Safe
   passwords, security question and recovery email, with challenges, retry lockout
-  and a crash-safe store at `/data/vendor/cryptoeng/pms_store`.
+  and a crash-safe store
 - **PKI family (10000-10013, 10016-10071):** "not supported" (10045), so OPlus
   apps fall back to their own software certificate checks.
 - **Everything else** (attestation, hardware-root commands): an explicit refusal.
