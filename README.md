@@ -22,8 +22,6 @@ This is software security, not a TEE replacement. See
 [cryptoeng/DESIGN.md](cryptoeng/DESIGN.md) for the protocol, the store format and
 the test evidence.
 
-> **Never delete `/data/vendor/cryptoeng/pms_store` or `pms_store.seed`.** They
-> hold the enrolled privacy password. Back them up as a pair.
 
 ## Layout
 
